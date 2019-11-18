@@ -1,0 +1,67 @@
+@import '../../common/styles/core/variables.scss';
+
+.search {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - #{$cell-size * 2});
+  max-width: $cell-size * 120;
+  align-self: center;
+
+  &__title {
+    color: $white;
+    font-size: $cell-size * 5;
+    line-height: $cell-size * 6.125;
+    font-family: $font-montserrat-light;
+    text-transform: uppercase;
+    padding: ($cell-size * 5) 0;
+  }
+
+  &__search-area {
+    display: flex;
+  }
+
+  &__filter {
+    padding: ($cell-size * 2.5) 0;
+  }
+}
+
+.search-controls {
+  display: flex;
+  height: $cell-size * 7.125;
+
+  &__input {
+    display: flex;
+    flex: 1 1 100%;
+
+    border: none;
+    background-color: rgba($grey-300, 0.7);
+    padding: $cell-size * 2;
+    margin-right: $cell-size * 1.75;
+    border-radius: $cell-size / 2;
+
+    color: $white;
+    font-size: $cell-size * 2.5;
+    line-height: $cell-size * 3;
+    font-family: $font-montserrat-regular;
+
+    width: 100%;
+
+    &::placeholder {
+      color: $grey-100;
+    }
+  }
+
+  &__button {
+    background-color: $pink;
+    min-width: $cell-size * 29.125;
+    border: none;
+    border-radius: $cell-size * .5;
+    cursor: pointer;
+    color: $white;
+    font-size: $cell-size * 2.5;
+    line-height: $cell-size * 3;
+    font-family: $font-montserrat-medium;
+    text-transform: uppercase;
+    padding: 0;
+  }
+}

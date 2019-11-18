@@ -1,15 +1,23 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   entry: {
     main: './src/index.tsx'
   },
   output: {
-    filename: 'main.js',   
+    filename: 'main.js',
     chunkFilename: '[name].chunk.js',
     publicPath: '/'
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.css', '.scss'],
+    alias:
+    {
+      '@assets': path.resolve(process.cwd(), './public/')
+    }
   },
   module: {
     rules: [
@@ -33,23 +41,36 @@ module.exports = {
        * @see https://webpack.js.org/loaders/sass-loader/
        */
       {
-        test: /\.(scss|css)$/,
+        test: /\.(scss)$/,
         use: [
           'style-loader',
           {
             loader: 'css-loader',
-            options: { sourceMap: true }
           },
           {
             loader: 'sass-loader',
-            options: { sourceMap: true }
+          }
+        ]
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'images',
+        },
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {              
+              outputPath: 'fonts'
+            }
           }
         ]
       }
     ]
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.css', '.scss']
   },
   plugins: [
     /*
@@ -62,7 +83,7 @@ module.exports = {
      */
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'public/index.html',
+      template: './public/index.html',
       chunks: ['main'],
       hash: true
     }),
