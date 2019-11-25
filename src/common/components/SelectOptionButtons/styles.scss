@@ -1,0 +1,45 @@
+@import '../../styles/core/variables.scss';
+
+.select-option-buttons {
+  display: flex;
+  align-items: center;  
+
+  &__title {
+    font-size: $cell-size * 2;
+    line-height: $cell-size * 2.375;
+    font-family: $font-montserrat-regular;
+    letter-spacing: $cell-size / 8;
+    color: $white;
+    text-transform: uppercase;
+    height: $cell-size * 4.375;
+    padding-right: $cell-size * 2.5;
+    display: flex;
+    align-items: center;
+  }
+
+  &__button {
+    font-size: $cell-size * 2;
+    line-height: $cell-size * 2.375;
+    font-family: $font-montserrat-regular;
+    color: $white;
+    text-transform: uppercase;
+    background-color: rgba($grey-200, 0.68);
+    border: none;
+    cursor: pointer;
+    padding: $cell-size ($cell-size * 2.5);
+
+    &--active {
+      background-color: $pink;
+    }
+
+    &:nth-of-type(1) {
+      border-top-left-radius: $cell-size / 2;
+      border-bottom-left-radius: $cell-size / 2;
+    }
+
+    &:nth-last-of-type(1) {
+      border-top-right-radius: $cell-size / 2;
+      border-bottom-right-radius: $cell-size / 2;
+    }
+  }
+}

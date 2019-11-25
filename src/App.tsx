@@ -1,16 +1,19 @@
 import * as React from 'react';
-import {
-  Component,
-  CreateElement,
-  FunctionalComponent,
-  PureComponent
-} from './components';
+
+import { Header, Search, InfoBar, Content, Footer } from './components';
+import { ErrorBoundary } from './common/components';
+
+import './common/styles';
 
 export const App = () => (
-  <>
-    <Component />
-    <CreateElement />
-    <FunctionalComponent />
-    <PureComponent />
-  </>
+  <div className="netflix-roulette">
+    <ErrorBoundary>
+      <Header>
+        <Search />
+      </Header>
+      <InfoBar />
+      <Content />
+      <Footer />
+    </ErrorBoundary>
+  </div>
 );

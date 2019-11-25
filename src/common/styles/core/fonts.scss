@@ -1,0 +1,36 @@
+@import './variables.scss';
+
+@font-face {
+  font-family: $font-montserrat-extrabold;
+  font-weight: normal;
+  font-style: normal;
+  src: url('~@assets/fonts/Montserrat-ExtraBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: $font-montserrat-bold;;
+  font-weight: normal;
+  font-style: normal;
+  src: url('~@assets/fonts/Montserrat-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: $font-montserrat-medium;
+  font-weight: normal;
+  font-style: normal;
+  src: url('~@assets/fonts/Montserrat-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: $font-montserrat-regular;
+  font-weight: normal;
+  font-style: normal;
+  src: url('~@assets/fonts/Montserrat-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: $font-montserrat-light;
+  font-weight: normal;
+  font-style: normal;
+  src: url('~@assets/fonts/Montserrat-Light.woff2') format('woff2');
+}

@@ -1,0 +1,27 @@
+@import '../../common/styles/core/variables.scss';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: ($cell-size * 50) - ($cell-size * 2);
+  max-height: ($cell-size * 50) - ($cell-size * 2);
+  position: relative;
+
+  &__layout {
+    background: url('~@assets/images/header_layout.jpg') no-repeat;
+    background-size: cover;
+    filter: blur($cell-size * 0.5);
+    margin: -$cell-size;
+    position: absolute;
+    z-index: -1;
+    height: ($cell-size * 50);
+    width: calc(100% + #{$cell-size * 2});
+  }
+
+  &__background {
+    background-color: $black;
+    opacity: .8;
+    height: 100%;
+  }
+}
