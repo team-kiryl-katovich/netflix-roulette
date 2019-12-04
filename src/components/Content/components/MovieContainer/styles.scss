@@ -1,0 +1,9 @@
+@import '~@common/styles';
+
+.movie-container {
+    display: flex;
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+    max-width: $cell-size * 140;
+}
+  

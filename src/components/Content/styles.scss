@@ -1,61 +1,8 @@
-@import '../../common/styles/core/variables.scss';
+@import '~@common/styles';
 
 .content {
   display: flex;
   flex: 1 1 100%;
   background-color: $grey-400;
   justify-content: center;
-}
-
-.movie-container {
-  display: flex;
-  flex: 1 1 100%;
-  flex-wrap: wrap;
-  max-width: $cell-size * 140;
-}
-
-.movie-card {
-  flex: 0 1 calc(33% - #{$cell-size * 2 * 2});
-  padding: $cell-size * 2;
-  flex-direction: column;
-
-  &__description {
-    display: flex;
-    flex: 1 1 100%;
-    padding-top: ($cell-size * 2);
-  }
-
-  &-title {
-    flex: 1 1 80%;
-
-    &__title {
-      color: rgba($white, 0.7);
-      font-size: $cell-size * 2;
-      line-height: $cell-size * 2.75;
-      font-family: $font-montserrat-medium;
-      padding-bottom: $cell-size;
-    }
-
-    &__gengre {
-      color: rgba($white, 0.5);
-      font-size: $cell-size * 1.75;
-      line-height: $cell-size * 2;
-      font-family: $font-montserrat-medium;
-    }
-  }
-
-  &-year {
-    flex: 1 1 auto;
-
-    &__label {
-      color: rgba($white, 0.7);
-      font-size: $cell-size * 1.75;
-      line-height: $cell-size * 2;
-      font-family: $font-montserrat-medium;
-      padding: ($cell-size / 2) $cell-size;
-      border: ($cell-size / 8) solid rgba($grey-000, 0.5);
-      border-radius: $cell-size / 2;
-      text-align: center;
-    }
-  }
 }

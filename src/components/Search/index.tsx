@@ -1,30 +1,44 @@
 import * as React from 'react';
+import { compose } from 'redux';
 
-import { SelectOptionButtons } from '../../common/components';
+import { SearchBy } from '@common/api';
+import { Button, Label, Input, SelectOptionButtons } from '@common/components';
+import { withMoviesDataHandlers } from '@enhancers/withMovies';
+
+import { SearchComponentProps } from './models';
+import { options } from './constants';
 
 import './styles';
+import { withFilter } from '@enhancers/withFilter';
 
-// TODO: split into label, button and etc simple components
+const searchSize = 9;
 
-export const Search = () => {
-  const [toggle, setToggle] = React.useState(false);
-  if (toggle) {
-    throw new Error('Search is not implemented');
-  }
+const SearchComponent = ({ filter, setFilter, searchMovies }: SearchComponentProps) => {
+  const [search, setSearch] = React.useState<string>('');
+  const [searchBy, setSearchBy] = React.useState<SearchBy>('title');
+
+  const onClickCallback = React.useCallback(() => {
+    setFilter({
+      search,
+      searchBy,
+    });
+    searchMovies({ limit: searchSize });
+  }, [setFilter, filter, search, searchBy]);
+
   return (
     <div className="search">
-      <div className="search__title">Find your movie</div>
+      <Label className="search__title" text="Find your movie" uppercase={true} />
       <div className="search__area">
         <div className="search-controls">
-          <input className="search-controls__input" type="text" placeholder="Quentin Tarantio"></input>
-          <button className="search-controls__button" type="button" onClick={() => setToggle(true)}>
-            Search
-          </button>
+          <Input className="search-controls__input" placeholder="Quentin Tarantio" onChange={setSearch} />
+          <Button className="search-controls__button" title="Search" onClick={onClickCallback} />
         </div>
       </div>
       <div className="search__filter">
-        <SelectOptionButtons title="Search by" options={['Title', 'Gengre']} />
+        <SelectOptionButtons<SearchBy> title="Search by" options={options} value={searchBy} onChange={setSearchBy} />
       </div>
     </div>
   );
 };
+
+export const Search = compose<React.ComponentType>(withFilter, withMoviesDataHandlers)(SearchComponent);

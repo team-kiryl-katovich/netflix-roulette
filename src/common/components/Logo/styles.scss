@@ -1,19 +1,19 @@
-@import '../../styles/core/variables.scss';
+@import '../../styles';
 
 .logo {
-  color: $pink;
+  color: color('pink');
   letter-spacing: $cell-size / 16;
   padding: ($cell-size * 2.5) ($cell-size * 7.5);
 
   &__bold {
     font-size: $cell-size * 2.5;
     line-height: $cell-size * 3;
-    font-family: $font-montserrat-extrabold;
+    font-family: font('extrabold');
   }
 
   &__normal {
     font-size: $cell-size * 2.5;
     line-height: $cell-size * 3;
-    font-family: $font-montserrat-regular;
+    font-family: font('regular');
   }
 }

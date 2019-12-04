@@ -1,0 +1,18 @@
+@import '../../styles';
+
+.netflix-button {
+  border: none;
+  border-radius: $cell-size * 0.5;
+  cursor: pointer;
+  color: $white;  
+  text-transform: uppercase;
+  padding: $cell-size ($cell-size * 2.5);
+
+  &--primary {
+    background-color: color('pink');
+  }
+
+  &--secondary {
+    background-color: rgba(grey('200'), 0.68);
+  }
+}

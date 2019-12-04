@@ -1,14 +1,14 @@
-@import '../../common/styles/core/variables.scss';
+@import '../../common/styles';
 
 .info-bar {
   min-height: $cell-size * 8.75;
-  background-color: $grey-100;
+  background-color: grey('100');
   display: flex;
   justify-content: center;
   padding: 0 ($cell-size * 2);
 
   &__controls {
-    display: flex;    
+    display: flex;
     max-width: $cell-size * 120;
     flex: 1 1 100%;
   }
@@ -16,10 +16,7 @@
   .info-label {
     font-size: $cell-size * 2;
     line-height: $cell-size * 2.375;
-    font-family: $font-montserrat-extrabold;
-    color: $white;
-    display: flex;
+    font-family: font('extrabold');
     flex: 1 1 auto;
-    align-items: center;
   }
 }

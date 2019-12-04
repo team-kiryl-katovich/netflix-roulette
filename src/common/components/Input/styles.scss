@@ -1,0 +1,16 @@
+@import '../../styles';
+
+.netflix-input {
+  display: flex;
+  flex: 1 1 100%;
+
+  color: color('white');
+  border: none;
+  border-radius: $cell-size / 2;
+  background-color: rgba(grey('300'), 0.7);
+  padding: $cell-size * 2;
+
+  &::placeholder {
+    color: grey('100');
+  }
+}
