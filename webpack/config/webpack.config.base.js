@@ -16,7 +16,10 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js', '.css', '.scss'],
     alias:
     {
-      '@assets': path.resolve(process.cwd(), './public/')
+      '@assets': path.resolve(process.cwd(), './public/'),
+      '@common': path.resolve(process.cwd(), './src/common/'),
+      '@enhancers': path.resolve(process.cwd(), './src/enhancers/'),
+      '@store': path.resolve(process.cwd(), './src/store/'),
     }
   },
   module: {
@@ -64,7 +67,7 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: {              
+            options: {
               outputPath: 'fonts'
             }
           }

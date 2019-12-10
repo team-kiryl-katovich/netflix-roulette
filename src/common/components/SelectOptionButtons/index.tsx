@@ -1,31 +1,38 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
+import { Button, Label } from '..';
+
 import { SelectOptionButtonProps } from './models';
+export { SelectOption } from './models';
 
 import './styles';
 
-export const SelectOptionButtons = ({
+export const SelectOptionButtons = <T extends string | number>({
   title,
-  options
-}: SelectOptionButtonProps) => {
-  const [selectedIndex, setIndex] = React.useState(0);
+  options,
+  onChange,
+  value,
+}: SelectOptionButtonProps<T>) => {
   return (
     <div className="select-option-buttons">
-      <div className="select-option-buttons__title">{title}</div>
-      {options &&
-        options.map((option, index) => (
-          <button
-            key={`select-option-button-${index}`}
-            className={classNames('select-option-buttons__button', {
-              ['select-option-buttons__button--active']: index === selectedIndex
-            })}
-            type="button"
-            onClick={() => setIndex(index)}
-          >
-            {option}
-          </button>
-        ))}
+      <Label className="select-option-buttons__title" text={title} uppercase={true} />
+      {options.map(({ item, clientId }) => {
+        const isSelected = item.value === value;
+        return (
+          <Button
+            className="select-option-buttons__button"
+            title={item.title}
+            type={isSelected ? 'primary' : 'secondary'}
+            onClick={() => {
+              if (!isSelected) {
+                onChange(item.value);
+              }
+            }}
+            key={clientId}
+          />
+        );
+      })}
     </div>
   );
 };

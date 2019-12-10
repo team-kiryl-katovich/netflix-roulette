@@ -1,8 +1,8 @@
-@import '../../common/styles/core/variables.scss';
+@import '../../common/styles';
 
 .footer {
   min-height: $cell-size * 8.75;
-  background-color: $grey-200;
+  background-color: grey('200');
   display: flex;
   justify-content: center;
 }

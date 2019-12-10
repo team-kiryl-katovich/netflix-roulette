@@ -1,0 +1,11 @@
+@import '../../styles';
+
+.netflix-label {
+  color: color('white');
+  display: flex;
+  align-items: center;
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+}

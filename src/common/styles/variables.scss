@@ -6,12 +6,34 @@ $grey-200: #424242;
 $grey-300: #323232;
 $grey-400: #232323;
 
+$grey: (
+  '000': $grey-000,
+  '100': $grey-100,
+  '200': $grey-200,
+  '300': $grey-300,
+  '400': $grey-400
+);
+
 $white: #ffffff;
 $black: #000000;
 $pink: #f65262;
+
+$color: (
+  'white': $white,
+  'black': $black,
+  'pink': $pink
+);
 
 $font-montserrat-extrabold: 'Montserrat ExtraBold';
 $font-montserrat-bold: 'Montserrat Bold';
 $font-montserrat-medium: 'Montserrat Medium';
 $font-montserrat-regular: 'Montserrat Regular';
 $font-montserrat-light: 'Montserrat Light';
+
+$font: (
+  'extrabold': $font-montserrat-extrabold,
+  'bold': $font-montserrat-bold,
+  'medium': $font-montserrat-medium,
+  'regular': $font-montserrat-regular,
+  'light': $font-montserrat-light
+);
