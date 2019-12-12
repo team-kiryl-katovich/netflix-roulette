@@ -1,0 +1,99 @@
+@import '~@common/styles';
+
+.movie-info {
+  display: flex;  
+  align-self: center;
+  width: 100%;
+  max-width: $cell-size * 140;
+  overflow: hidden;
+
+  &__search-link {
+    color: color('pink');
+    font-size: $cell-size * 3;
+    position: absolute;
+    top: $cell-size * 2.5;
+    right: $cell-size * 7.5;
+  }
+
+  &__image {
+    flex: 1 1 20%;
+    padding: $cell-size * 2;
+  }
+
+  &__content {
+    flex: 1 1 80%;
+    padding: 0 ($cell-size * 5.5);
+  }
+
+  &-header {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: $cell-size;
+
+    &__title {
+      font-family: font('regular');
+      font-size: $cell-size * 6;
+      line-height: $cell-size * 7;
+      opacity: 0.8;
+      max-width: 80%;
+    }
+
+    &__rating {
+      font-family: font('regular');
+      font-size: $cell-size * 3.25;
+      line-height: $cell-size * 4;
+      color: color('green');
+      opacity: 0.8;
+      border: 1px solid color('white');
+      border-radius: 50%;
+      justify-content: center;
+      margin: 0 ($cell-size * 3);
+      width: $cell-size * 6.5;
+      height: $cell-size * 6.5;
+    }
+  }
+
+  &-subtitle {
+    font-family: font('medium');
+    font-size: $cell-size * 2;
+    line-height: $cell-size * 2.375;
+    opacity: 0.7;
+    padding-bottom: $cell-size * 3;
+  }
+
+  &-time {
+    display: flex;
+    padding-bottom: $cell-size * 2;
+
+    &__year,
+    &__duration {
+      display: flex;
+      align-items: baseline;
+      margin-right: $cell-size * 3;
+    }
+
+    &-label {
+      font-family: font('regular');
+      font-size: $cell-size * 3.25;
+      line-height: $cell-size * 4;
+      color: color('pink');
+      opacity: 1;
+      margin-right: $cell-size;
+    }
+
+    &-sublabel {
+      font-family: font('regular');
+      font-size: $cell-size * 1.75;
+      color: color('white');
+      line-height: $cell-size * 2.25;
+      opacity: 0.5;
+    }
+  }
+
+  &-description {
+    font-family: sans-serif;
+    font-size: $cell-size * 2.125;
+    line-height: $cell-size * 2.75;
+    opacity: 0.8;
+  }
+}

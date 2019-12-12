@@ -11,7 +11,7 @@ const queryParams = (params: { [key: string]: string | number }): string => {
     return '';
   }
   return Object.keys(params)
-    .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
+    .map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
     .join('&');
 };
 
@@ -21,7 +21,8 @@ export const callApiWithGet = async <TData>(
 ): Promise<Result<TData>> => {
   try {
     const response = await fetch(`${getEndpoint(endpointKey, queryParams(params))}`);
-    return await response.json();
+    const data = await response.json();
+    return { data };
   } catch (e) {
     return { error: e };
   }

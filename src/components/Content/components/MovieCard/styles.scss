@@ -4,6 +4,11 @@
   flex: 0 1 calc(33% - #{$cell-size * 2 * 2});
   padding: $cell-size * 2;
   flex-direction: column;
+  overflow: hidden;
+
+  a {
+    text-decoration: none;
+  }
 
   &__description {
     display: flex;
@@ -13,6 +18,7 @@
 
   &-title {
     flex: 1 1 80%;
+    max-width: 80%;
 
     &__title {
       color: rgba(color('white'), 0.7);

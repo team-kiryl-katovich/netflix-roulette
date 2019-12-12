@@ -8,7 +8,7 @@ export const initialState: MoviesFilterState = {
   search: '',
   searchBy: 'title',
   sortBy: 'release_date',
-  sortOrder: 'asc',
+  sortOrder: 'desc',
 };
 
 export const reducer = handleActions<MoviesFilterState>(
