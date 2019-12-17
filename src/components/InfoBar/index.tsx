@@ -10,7 +10,7 @@ import { InfoBarComponentProps } from './models';
 import { options } from './constatns';
 
 import './styles';
-// Sort by rating not work properly on API, release date is ok
+
 export const InfoBarComponent = ({
   filter,
   setFilter,

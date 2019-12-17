@@ -11,7 +11,7 @@ import './styles';
 
 const pageSize = 9;
 
-const MovieContainerComponent = ({
+export const MovieContainerComponent = ({
   moviesData: { movies, loading, offset },
   searchMovies,
   moreMovies,

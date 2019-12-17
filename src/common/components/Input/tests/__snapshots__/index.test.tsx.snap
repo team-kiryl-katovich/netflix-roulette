@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[COMMON] [COMPONENTS] [INPUT] should render component 1`] = `
+<input
+  className="netflix-input"
+  onChange={[Function]}
+  type="text"
+/>
+`;

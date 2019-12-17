@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { createBrowserHistory, createMemoryHistory, History } from 'history';
 import { routerMiddleware } from 'connected-react-router';
 import { Store, DeepPartial, compose, applyMiddleware, createStore } from 'redux';

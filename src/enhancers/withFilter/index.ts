@@ -8,11 +8,11 @@ import { WithFilterDataProps, WithFilterHandlersProps } from './models';
 
 export * from './models';
 
-const mapStateToProps = (state: AppState): WithFilterDataProps => ({ filter: state.moviesFilter });
+export const mapStateToProps = (state: AppState): WithFilterDataProps => ({ filter: state.moviesFilter });
 
 export const withFilterData = connect(mapStateToProps);
 
-const mapDispatchToProps = (dispatch: Dispatch): WithFilterHandlersProps =>
+export const mapDispatchToProps = (dispatch: Dispatch): WithFilterHandlersProps =>
   bindActionCreators(
     {
       setFilter: actions.setFilter,

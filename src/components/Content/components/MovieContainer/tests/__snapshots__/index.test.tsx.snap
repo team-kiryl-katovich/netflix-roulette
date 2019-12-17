@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[COMPONENTS] [CONTENT] [COMPONENTS] [MOVIE_CONTAINER_COMPONENT] should render component 1`] = `
+<div
+  className="movie-container"
+>
+  <MoviePagination
+    fetch={[MockFunction]}
+    loading={false}
+    moviesCount={1}
+    offset={
+      Object {
+        "limit": 1,
+        "offset": 1,
+      }
+    }
+    pageSize={9}
+  >
+    <Component
+      gengre="fakeGenre"
+      id={1}
+      imageUrl="fakePosterPath"
+      key="1"
+      title="fakeTitle"
+      year={2019}
+    />
+  </MoviePagination>
+</div>
+`;

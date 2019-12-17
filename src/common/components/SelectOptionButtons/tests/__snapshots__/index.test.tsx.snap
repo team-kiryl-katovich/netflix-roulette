@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[COMMON] [COMPONENTS] [SELECT_OPTION_BUTTONS] should render component 1`] = `
+<div
+  className="select-option-buttons"
+>
+  <Component
+    className="select-option-buttons__title"
+    text="fakeTitle"
+    uppercase={true}
+  />
+  <Component
+    className="select-option-buttons__button"
+    key="1"
+    onClick={[Function]}
+    title="fakeItemTitle1"
+    type="primary"
+  />
+  <Component
+    className="select-option-buttons__button"
+    key="2"
+    onClick={[Function]}
+    title="fakeItemTitle2"
+    type="secondary"
+  />
+</div>
+`;

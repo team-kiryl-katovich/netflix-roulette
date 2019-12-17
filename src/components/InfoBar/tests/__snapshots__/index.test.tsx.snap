@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[COMPONENTS] [INFO_BAR_COMPONENT] should render component 1`] = `
+<div
+  className="info-bar"
+>
+  <div
+    className="info-bar__controls"
+  >
+    <Component
+      className="info-label"
+      text="0 movies found"
+    />
+    <Component
+      onChange={[Function]}
+      options={
+        Array [
+          Object {
+            "clientId": "sort-options-0-0",
+            "item": Object {
+              "title": "Release date",
+              "value": "release_date",
+            },
+          },
+          Object {
+            "clientId": "sort-options-0-1",
+            "item": Object {
+              "title": "Rating",
+              "value": "vote_average",
+            },
+          },
+        ]
+      }
+      title="Sort by"
+      value="release_date"
+    />
+  </div>
+</div>
+`;

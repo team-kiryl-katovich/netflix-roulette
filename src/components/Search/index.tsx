@@ -4,16 +4,16 @@ import { compose } from 'redux';
 import { SearchBy } from '@common/api';
 import { Button, Label, Input, SelectOptionButtons } from '@common/components';
 import { withMoviesDataHandlers } from '@enhancers/withMovies';
+import { withFilter } from '@enhancers/withFilter';
 
 import { SearchComponentProps } from './models';
 import { options } from './constants';
 
 import './styles';
-import { withFilter } from '@enhancers/withFilter';
 
 const searchSize = 9;
 
-const SearchComponent = ({ filter, setFilter, searchMovies }: SearchComponentProps) => {
+export const SearchComponent = ({ filter, setFilter, searchMovies }: SearchComponentProps) => {
   const [search, setSearch] = React.useState<string>('');
   const [searchBy, setSearchBy] = React.useState<SearchBy>('title');
 

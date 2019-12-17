@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[COMMON] [COMPONENTS] [BUTTON] should render component 1`] = `
+<button
+  className="netflix-button netflix-button--primary"
+  onClick={[MockFunction]}
+  type="button"
+>
+  fakeTitle1
+</button>
+`;
