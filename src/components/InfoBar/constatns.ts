@@ -7,5 +7,5 @@ export const options = uniqueIdItems<SelectOption<SortBy>>(
     { title: 'Release date', value: 'release_date' },
     { title: 'Rating', value: 'vote_average' },
   ],
-  'sort-options'
+  'sort-options',
 );

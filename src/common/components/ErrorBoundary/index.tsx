@@ -9,7 +9,7 @@ export class ErrorBoundary extends React.PureComponent<ErrorBoundaryProps, Error
     super(props);
     this.state = {
       error: null,
-      errorInfo: null
+      errorInfo: null,
     };
   }
 
@@ -17,9 +17,20 @@ export class ErrorBoundary extends React.PureComponent<ErrorBoundaryProps, Error
     this.setState(
       {
         error,
-        errorInfo
+        errorInfo,
       },
       this.reset
+    );
+  }
+
+  private reset() {
+    setTimeout(
+      () =>
+        this.setState({
+          error: null,
+          errorInfo: null,
+        }),
+      3000
     );
   }
 
@@ -37,17 +48,6 @@ export class ErrorBoundary extends React.PureComponent<ErrorBoundaryProps, Error
           </div>
         )}
       </>
-    );
-  }
-
-  private reset() {
-    setTimeout(
-      () =>
-        this.setState({
-          error: null,
-          errorInfo: null
-        }),
-      3000
     );
   }
 }

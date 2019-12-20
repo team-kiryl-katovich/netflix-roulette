@@ -16,7 +16,7 @@ export const reducer = handleActions<MoviesFilterState>(
     [ACTION_TYPES.SET_FILTER]: (state, action) => ({
       ...state,
       ...action.payload,
-    }),    
+    }),
   },
-  initialState
+  initialState,
 );

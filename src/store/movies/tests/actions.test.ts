@@ -1,5 +1,9 @@
-import { Offset, OffsetResult, Movie, getMovies } from '@common/api';
-import { MoviesFetchState, MoviesDataState, actions, ACTION_TYPES, thunkActions } from '../';
+import {
+  Offset, OffsetResult, Movie, getMovies,
+} from '@common/api';
+import {
+  MoviesFetchState, MoviesDataState, actions, ACTION_TYPES, thunkActions,
+} from '..';
 
 jest.mock('@common/api', () => ({
   getMovies: jest.fn(),
@@ -83,9 +87,7 @@ describe('[STORE] [MOVIES] [THUNK_ACTIONS]', () => {
   };
 
   test('thunk searchMovie error', async () => {
-    (getMovies as jest.Mock).mockImplementation(() => {
-      return Promise.resolve(fakeErrorResult);
-    });
+    (getMovies as jest.Mock).mockImplementation(() => Promise.resolve(fakeErrorResult));
 
     await thunkActions.searchMovies(fakeOffset)(fakeDispatch, fakeGetState as any, {});
 
@@ -94,9 +96,7 @@ describe('[STORE] [MOVIES] [THUNK_ACTIONS]', () => {
   });
 
   test('thunk searchMovies success', async () => {
-    (getMovies as jest.Mock).mockImplementation(() => {
-      return Promise.resolve(fakeResult);
-    });
+    (getMovies as jest.Mock).mockImplementation(() => Promise.resolve(fakeResult));
 
     await thunkActions.searchMovies(fakeOffset)(fakeDispatch, fakeGetState as any, {});
 
@@ -109,14 +109,12 @@ describe('[STORE] [MOVIES] [THUNK_ACTIONS]', () => {
           offset: fakeResult.offset,
           limit: fakeResult.total,
         },
-      })
+      }),
     );
   });
 
   test('thunk moreMovies error', async () => {
-    (getMovies as jest.Mock).mockImplementation(() => {
-      return Promise.resolve(fakeErrorResult);
-    });
+    (getMovies as jest.Mock).mockImplementation(() => Promise.resolve(fakeErrorResult));
 
     await thunkActions.moreMovies(fakeOffset)(fakeDispatch, fakeGetState as any, {});
 
@@ -125,9 +123,7 @@ describe('[STORE] [MOVIES] [THUNK_ACTIONS]', () => {
   });
 
   test('thunk moreMovies success', async () => {
-    (getMovies as jest.Mock).mockImplementation(() => {
-      return Promise.resolve(fakeResult);
-    });
+    (getMovies as jest.Mock).mockImplementation(() => Promise.resolve(fakeResult));
 
     await thunkActions.moreMovies(fakeOffset)(fakeDispatch, fakeGetState as any, {});
 
@@ -140,7 +136,7 @@ describe('[STORE] [MOVIES] [THUNK_ACTIONS]', () => {
           offset: fakeResult.offset,
           limit: fakeResult.total,
         },
-      })
+      }),
     );
   });
 });

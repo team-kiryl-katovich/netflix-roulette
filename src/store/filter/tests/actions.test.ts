@@ -1,4 +1,4 @@
-import { MoviesFilterState, actions, ACTION_TYPES } from '../';
+import { MoviesFilterState, actions, ACTION_TYPES } from '..';
 
 describe('[SOTRE] [FILTER] [ACTIONS]', () => {
   test('should return action with SET_FILTER type any payload', () => {

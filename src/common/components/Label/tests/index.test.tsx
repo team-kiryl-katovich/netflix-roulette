@@ -7,7 +7,7 @@ import { Label } from '..';
 describe('[COMMON] [COMPONENTS] [LABEL]', () => {
   test('should render component', () => {
     const fakeProps: LabelProps = {
-      text: 'fakeText'
+      text: 'fakeText',
     };
 
     const component = enzyme.shallow(<Label {...fakeProps} />);

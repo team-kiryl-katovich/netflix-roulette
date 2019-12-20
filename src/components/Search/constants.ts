@@ -7,5 +7,5 @@ export const options = uniqueIdItems<SelectOption<SearchBy>>(
     { title: 'Title', value: 'title' },
     { title: 'Gengre', value: 'genres' },
   ],
-  'search-by-options'
+  'search-by-options',
 );

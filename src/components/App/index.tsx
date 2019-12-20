@@ -6,7 +6,9 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import { ErrorBoundary } from '@common/components';
 import { ROUTES, ROUTES_PARAMS } from '@common/routes';
 
-import { Header, MovieInfo, InfoBar, Content, Footer, Search, NotFound } from '../';
+import {
+  Header, MovieInfo, InfoBar, Content, Footer, Search, NotFound,
+} from '..';
 
 import { AppProps } from './models';
 

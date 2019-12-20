@@ -11,11 +11,11 @@ module.exports = () => {
   const isProduction = env === 'production';
   if (!isProduction) {
     baseConfig.entry.main.unshift('react-hot-loader/patch', 'webpack-hot-middleware/client?reload=true');
-  }  
+  }
   baseConfig.plugins.push(
     new webpack.DefinePlugin({
       'env.production': JSON.stringify(isProduction),
-    })
+    }),
   );
   return webpackMerge(baseConfig, isProduction ? prodConfig : devConfig);
 };

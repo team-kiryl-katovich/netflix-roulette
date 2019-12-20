@@ -7,7 +7,7 @@ import { ScaleImage } from '..';
 describe('[COMMON] [COMPONENTS] [SCALE_IMAGE]', () => {
   test('should render component', () => {
     const fakeProps: ScaleImageProps = {
-      src: 'fakeSrc'
+      src: 'fakeSrc',
     };
 
     const component = enzyme.shallow(<ScaleImage {...fakeProps} />);

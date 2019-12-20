@@ -9,7 +9,7 @@ export const Label = ({ text, className, uppercase }: LabelProps) => (
   <div
     className={classnames('netflix-label', {
       [className]: !!className,
-      ['netflix-label--uppercase']: uppercase
+      'netflix-label--uppercase': uppercase,
     })}
   >
     {text}

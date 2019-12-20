@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Loader } from '@common/components';
 import { withMovies } from '@enhancers/withMovies';
 
-import { MovieCard, MoviePagination } from '../';
+import { MovieCard, MoviePagination } from '..';
 
 import { MovieContainerComponentProps } from './models';
 
@@ -12,9 +12,9 @@ import './styles';
 const pageSize = 9;
 
 export const MovieContainerComponent = ({
-  moviesData: { movies, loading, offset },  
+  moviesData: { movies, loading, offset },
   moreMovies,
-}: MovieContainerComponentProps) => {  
+}: MovieContainerComponentProps) => {
   if (loading && !movies.length) {
     return <Loader loading={loading} />;
   }

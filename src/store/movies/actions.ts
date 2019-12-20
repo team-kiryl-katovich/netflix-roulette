@@ -18,12 +18,12 @@ const fetchMovies = createAction<MoviesFetchState, MoviesFetchState>(ACTION_TYPE
 
 const fetchMoviesError = createAction<MoviesFetchState, MoviesFetchState>(
   ACTION_TYPES.FETCH_MOVIES_ERROR,
-  (payload) => payload
+  (payload) => payload,
 );
 
 const receiveMoviesUpdate = createAction<MoviesState, MoviesState>(
   ACTION_TYPES.RECEIVE_MOVIES_UPDATE,
-  (payload) => payload
+  (payload) => payload,
 );
 
 const receiveMoviesAdd = createAction<MoviesState, MoviesState>(ACTION_TYPES.RECEIVE_MOVIES_ADD, (payload) => payload);
@@ -37,12 +37,14 @@ export const actions = {
 
 const searchMovies = (
   offset: Offset,
-  filter?: MovieFilter
+  filter?: MovieFilter,
 ): ThunkAction<Promise<void>, AppState, {}, AnyAction> => async (dispatch, getState) => {
   dispatch(fetchMovies({ loading: true, error: null, movies: [] }));
-  const { moviesFilter } = getState();  
-  const { error, data, total, offset: cursor } = await getMovies(offset, filter || moviesFilter);  
-  if (!!error) {    
+  const { moviesFilter } = getState();
+  const {
+    error, data, total, offset: cursor,
+  } = await getMovies(offset, filter || moviesFilter);
+  if (error) {
     dispatch(fetchMoviesError({ loading: false, error }));
   } else {
     dispatch(
@@ -53,19 +55,21 @@ const searchMovies = (
           offset: cursor,
           limit: total,
         },
-      })
+      }),
     );
   }
 };
 
 const moreMovies = (offset: Offset): ThunkAction<Promise<void>, AppState, {}, AnyAction> => async (
   dispatch,
-  getSate
+  getSate,
 ) => {
   dispatch(fetchMovies({ loading: true, error: null }));
   const { moviesFilter } = getSate();
-  const { error, data, total, offset: cursor } = await getMovies(offset, moviesFilter);
-  if (!!error) {
+  const {
+    error, data, total, offset: cursor,
+  } = await getMovies(offset, moviesFilter);
+  if (error) {
     dispatch(fetchMoviesError({ loading: false, error }));
   } else {
     dispatch(
@@ -76,7 +80,7 @@ const moreMovies = (offset: Offset): ThunkAction<Promise<void>, AppState, {}, An
           offset: cursor,
           limit: total,
         },
-      })
+      }),
     );
   }
 };

@@ -33,5 +33,5 @@ export const reducer = handleActions<MoviesDataState>(
       movies: [...state.movies, ...action.payload.movies],
     }),
   },
-  initialState
+  initialState,
 );

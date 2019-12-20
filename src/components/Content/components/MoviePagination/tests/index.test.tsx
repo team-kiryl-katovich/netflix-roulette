@@ -20,7 +20,7 @@ describe('[COMPONENTS] [CONTENT] [COMPONENTS] [MOVIE_PAGINATION]', () => {
     const component = enzyme.shallow(
       <MoviePagination {...fakeProps}>
         <div>fake children</div>
-      </MoviePagination>
+      </MoviePagination>,
     );
     expect(component).toMatchSnapshot();
   });
@@ -30,7 +30,7 @@ describe('[COMPONENTS] [CONTENT] [COMPONENTS] [MOVIE_PAGINATION]', () => {
     const component = enzyme.mount(
       <MoviePagination {...fakeProps}>
         <div>fake children</div>
-      </MoviePagination>
+      </MoviePagination>,
     );
 
     window.dispatchEvent(new window.UIEvent('scroll'));

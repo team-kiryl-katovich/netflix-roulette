@@ -19,7 +19,7 @@ module.exports = {
       '@common': path.resolve(process.cwd(), './src/common/'),
       '@enhancers': path.resolve(process.cwd(), './src/enhancers/'),
       '@store': path.resolve(process.cwd(), './src/store/'),
-      'react-dom': '@hot-loader/react-dom'
+      'react-dom': '@hot-loader/react-dom',
     },
   },
   module: {

@@ -45,7 +45,7 @@ export const MovieInfoComponent = ({
       </div>
       <div className="movie-info__content">
         <div className="movie-info-header">
-          <Label className="movie-info-header__title" text={movie.title} uppercase={true} />
+          <Label className="movie-info-header__title" text={movie.title} uppercase />
           <Label className="movie-info-header__rating" text={movie.vote_average} />
         </div>
         <Label className="movie-info-subtitle" text={movie.tagline} />
@@ -54,7 +54,7 @@ export const MovieInfoComponent = ({
             <Label
               className="movie-info-time-label"
               text={new Date(movie.release_date).getFullYear()}
-              uppercase={true}
+              uppercase
             />
             <Label className="movie-info-time-sublabel" text="year" />
           </div>

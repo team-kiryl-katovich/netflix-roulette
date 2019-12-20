@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const DEV_SERVER_PORT = 3000;
 const DEV_SERVER_PUBLIC_PATH = '/';
 
-module.exports = {  
+module.exports = {
   mode: 'development',
   devtool: 'source-map',
   devServer: {

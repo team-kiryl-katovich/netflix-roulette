@@ -9,10 +9,9 @@ import * as MovieData from './movie';
 
 import { AppState } from './models';
 
-export const makeRootReducer = (history: History) =>
-  combineReducers<AppState>({
-    moviesData: MoviesData.reducer,
-    moviesFilter: MoviesFilter.reducer,
-    movieData: MovieData.reducer,
-    router: connectRouter(history)
-  });
+export const makeRootReducer = (history: History) => combineReducers<AppState>({
+  moviesData: MoviesData.reducer,
+  moviesFilter: MoviesFilter.reducer,
+  movieData: MovieData.reducer,
+  router: connectRouter(history),
+});

@@ -13,6 +13,6 @@ const store = new AppStore(window['__PRELOADED_STATE__']);
 ReactDOM.hydrate(<App store={store.instance} history={store.history} />, document.getElementById('root'));
 
 const { hot } = module as any;
-if (!!hot) {
+if (hot) {
   hot.accept();
 }

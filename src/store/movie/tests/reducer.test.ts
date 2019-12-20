@@ -1,4 +1,6 @@
-import { MovieFetchState, MovieState, ACTION_TYPES, reducer, initialState } from '../';
+import {
+  MovieFetchState, MovieState, ACTION_TYPES, reducer, initialState,
+} from '..';
 
 describe('[SOTRE] [MOVIE] [REDUCER]', () => {
   test('should return initial state for unknown action', () => {

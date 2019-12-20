@@ -8,7 +8,7 @@ describe('[COMMON] [COMPONENTS] [ERROR_BOUNDARY]', () => {
     const component = enzyme.shallow(
       <ErrorBoundary>
         <div>fake children</div>
-      </ErrorBoundary>
+      </ErrorBoundary>,
     );
     expect(component).toMatchSnapshot();
   });
@@ -18,13 +18,13 @@ describe('[COMMON] [COMPONENTS] [ERROR_BOUNDARY]', () => {
     const component = enzyme.mount(
       <ErrorBoundary>
         <FakeChildren />
-      </ErrorBoundary>
+      </ErrorBoundary>,
     );
 
     const fakeError = new Error('fakeError');
     const children = component.find(FakeChildren);
     children.simulateError(fakeError);
-    
+
     expect(component.contains(fakeError.toString())).toBeTruthy();
   });
 });
