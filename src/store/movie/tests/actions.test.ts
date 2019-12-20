@@ -1,5 +1,7 @@
 import { Movie, getMovie, Result } from '@common/api';
-import { MovieFetchState, MovieDataState, actions, ACTION_TYPES, thunkActions } from '../';
+import {
+  MovieFetchState, MovieDataState, actions, ACTION_TYPES, thunkActions,
+} from '..';
 
 jest.mock('@common/api', () => ({
   getMovie: jest.fn(),
@@ -59,15 +61,13 @@ describe('[STORE] [MOVIE] [THUNK_ACTIONS]', () => {
   };
 
   test('thunk selectMovie error', async () => {
-    (getMovie as jest.Mock).mockImplementation(() => {
-      return Promise.resolve(fakeErrorResult);
-    });
+    (getMovie as jest.Mock).mockImplementation(() => Promise.resolve(fakeErrorResult));
 
     await thunkActions.selectMovie(0)(fakeDispatch, fakeGetState as any, {});
 
     expect(fakeDispatch).toBeCalledWith(actions.fetchMovie({ loading: true, error: null, notFound: false }));
     expect(fakeDispatch).toBeCalledWith(
-      actions.fetchMovieError({ error: fakeErrorResult.error, loading: false, notFound: false })
+      actions.fetchMovieError({ error: fakeErrorResult.error, loading: false, notFound: false }),
     );
   });
 
@@ -76,7 +76,7 @@ describe('[STORE] [MOVIE] [THUNK_ACTIONS]', () => {
 
     expect(fakeDispatch).toBeCalledWith(actions.fetchMovie({ loading: true, error: null, notFound: false }));
     expect(fakeDispatch).toBeCalledWith(
-      actions.receiveMovieUpdate({ movie: fakeMovie as Movie, loading: false, notFound: false })
+      actions.receiveMovieUpdate({ movie: fakeMovie as Movie, loading: false, notFound: false }),
     );
   });
 
@@ -86,9 +86,7 @@ describe('[STORE] [MOVIE] [THUNK_ACTIONS]', () => {
       data: { id: 2 } as Movie,
     };
 
-    (getMovie as jest.Mock).mockImplementation(() => {
-      return Promise.resolve(fakeApiResult);
-    });
+    (getMovie as jest.Mock).mockImplementation(() => Promise.resolve(fakeApiResult));
 
     await thunkActions.selectMovie(fakeApiResult.data.id)(fakeDispatch, fakeGetState as any, {});
 
@@ -98,7 +96,7 @@ describe('[STORE] [MOVIE] [THUNK_ACTIONS]', () => {
         movie: fakeApiResult.data,
         loading: false,
         notFound: false,
-      })
+      }),
     );
   });
 });

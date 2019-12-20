@@ -1,6 +1,6 @@
+import { AppState } from '@store/models';
 import { mapStateToProps, mapDispatchToProps } from '..';
 
-import { AppState } from '@store/models';
 
 describe('[ENHANCERS] [WITH_MOVIE]', () => {
   test('should map state to props', () => {

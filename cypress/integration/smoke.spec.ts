@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+// / <reference types="cypress" />
 
 describe('app smoke tests', () => {
   it('search by gengre', () => {

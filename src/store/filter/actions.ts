@@ -7,7 +7,7 @@ export const ACTION_TYPES = {
 
 const setFilter = createAction<MoviesFilterState, MoviesFilterState>(
   ACTION_TYPES.SET_FILTER,
-  (payload) => payload
+  (payload) => payload,
 );
 
 export const actions = {

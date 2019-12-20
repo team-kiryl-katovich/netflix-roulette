@@ -8,7 +8,9 @@ import { MovieCardProps } from './models';
 
 import './styles';
 
-export const MovieCard = ({ id, title, gengre, year, imageUrl }: MovieCardProps) => (
+export const MovieCard = ({
+  id, title, gengre, year, imageUrl,
+}: MovieCardProps) => (
   <div className="movie-card">
     <Link to={`${ROUTES.MOVIE}/${id}`}>
       <ScaleImage src={imageUrl} ratio={140} />

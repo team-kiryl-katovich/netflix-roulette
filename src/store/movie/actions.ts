@@ -2,10 +2,10 @@ import { ThunkAction } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import { createAction } from 'redux-actions';
 
-import { MovieState, MovieFetchState } from './models';
 import { AppState } from '@store/models';
 
 import { getMovie } from '@common/api';
+import { MovieState, MovieFetchState } from './models';
 
 export const ACTION_TYPES = {
   FETCH_MOVIE: 'FETCH_MOIVE',
@@ -17,12 +17,12 @@ const fetchMovie = createAction<MovieFetchState, MovieFetchState>(ACTION_TYPES.F
 
 const fetchMovieError = createAction<MovieFetchState, MovieFetchState>(
   ACTION_TYPES.FETCH_MOVIE_ERROR,
-  (payload) => payload
+  (payload) => payload,
 );
 
 const receiveMovieUpdate = createAction<MovieState, MovieState>(
   ACTION_TYPES.RECEIVE_MOVIE_UPDATE,
-  (payload) => payload
+  (payload) => payload,
 );
 
 export const actions = {
@@ -35,12 +35,12 @@ const selectMovie = (id: number): ThunkAction<Promise<void>, AppState, {}, AnyAc
   dispatch(fetchMovie({ loading: true, error: null, notFound: false }));
   const { moviesData } = getState();
   const movie = moviesData.movies.find((mov) => mov.id === id);
-  if (!!movie) {
+  if (movie) {
     dispatch(receiveMovieUpdate({ movie, loading: false, notFound: false }));
     return;
   }
   const { error, data } = await getMovie(id);
-  if (!!error) {
+  if (error) {
     dispatch(fetchMovieError({ error, loading: false, notFound: false }));
   } else {
     const notFound = !data || !Object.keys(data).length;
@@ -49,7 +49,7 @@ const selectMovie = (id: number): ThunkAction<Promise<void>, AppState, {}, AnyAc
         movie: !notFound && data,
         loading: false,
         notFound,
-      })
+      }),
     );
   }
 };

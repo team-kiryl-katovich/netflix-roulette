@@ -12,13 +12,12 @@ export const mapStateToProps = ({ movieData }: AppState): WithMovieDataProps => 
 
 export const withMovieData = connect(mapStateToProps);
 
-export const mapDispatchToProps = (dispatch: Dispatch): WithMovieHandlersProps =>
-  bindActionCreators(
-    {
-      selectMovie: thunkActions.selectMovie,
-    },
-    dispatch
-  );
+export const mapDispatchToProps = (dispatch: Dispatch): WithMovieHandlersProps => bindActionCreators(
+  {
+    selectMovie: thunkActions.selectMovie,
+  },
+  dispatch,
+);
 
 export const withMovieDataHandlers = connect(null, mapDispatchToProps);
 

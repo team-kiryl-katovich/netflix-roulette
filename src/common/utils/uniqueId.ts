@@ -17,6 +17,6 @@ export const uniqueIdItems = <T>(items: T[], prefix?: string): UniqueIdItem<T>[]
   const id = uniqueId(prefix);
   return items.map((item, index) => ({
     clientId: `${id}-${index}`,
-    item
+    item,
   }));
 };

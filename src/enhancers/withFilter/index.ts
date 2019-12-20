@@ -12,13 +12,12 @@ export const mapStateToProps = (state: AppState): WithFilterDataProps => ({ filt
 
 export const withFilterData = connect(mapStateToProps);
 
-export const mapDispatchToProps = (dispatch: Dispatch): WithFilterHandlersProps =>
-  bindActionCreators(
-    {
-      setFilter: actions.setFilter,
-    },
-    dispatch
-  );
+export const mapDispatchToProps = (dispatch: Dispatch): WithFilterHandlersProps => bindActionCreators(
+  {
+    setFilter: actions.setFilter,
+  },
+  dispatch,
+);
 
 export const withFilterHandlers = connect(null, mapDispatchToProps);
 

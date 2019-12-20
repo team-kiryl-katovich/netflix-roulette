@@ -25,7 +25,7 @@ export const InfoBarComponent = ({
           offset: 0,
           limit: movies.length,
         },
-        filter
+        filter,
       );
     } else {
       didMountRef.current = true;
@@ -36,7 +36,7 @@ export const InfoBarComponent = ({
     (value: SortBy) => {
       setFilter({ sortBy: value });
     },
-    [setFilter]
+    [setFilter],
   );
 
   return (

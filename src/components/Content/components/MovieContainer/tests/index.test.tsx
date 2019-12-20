@@ -9,6 +9,7 @@ import { MovieContainerComponent } from '..';
 describe('[COMPONENTS] [CONTENT] [COMPONENTS] [MOVIE_CONTAINER_COMPONENT]', () => {
   const fakeProps: MovieContainerComponentProps = {
     moreMovies: jest.fn(),
+    searchMovies: jest.fn(),
     moviesData: {
       error: null,
       loading: false,
@@ -33,7 +34,6 @@ describe('[COMPONENTS] [CONTENT] [COMPONENTS] [MOVIE_CONTAINER_COMPONENT]', () =
         offset: 1,
       },
     },
-    searchMovies: jest.fn(),
   };
 
   test('should render component', () => {
@@ -51,12 +51,9 @@ describe('[COMPONENTS] [CONTENT] [COMPONENTS] [MOVIE_CONTAINER_COMPONENT]', () =
       },
     };
 
-    (props.searchMovies as jest.Mock).mockReset();
-
     const component = enzyme.mount(<MovieContainerComponent {...props} />);
     const loader = component.find(Loader);
-    
+
     expect(loader.exists()).toBeTruthy();
-    expect(props.searchMovies).toHaveBeenCalledTimes(1);
   });
 });

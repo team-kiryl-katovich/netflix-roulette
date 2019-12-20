@@ -6,7 +6,9 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import { ErrorBoundary } from '@common/components';
 import { ROUTES, ROUTES_PARAMS } from '@common/routes';
 
-import { Header, MovieInfo, InfoBar, Content, Footer, Search, NotFound } from '../';
+import {
+  Header, MovieInfo, InfoBar, Content, Footer, Search, NotFound,
+} from '..';
 
 import { AppProps } from './models';
 
@@ -22,8 +24,11 @@ export const App = ({ store, history }: AppProps) => (
               <Route exact path={ROUTES.HOME}>
                 <Search />
               </Route>
-              <Route path={`${ROUTES.MOVIE}/${ROUTES_PARAMS.ID}`}>
-                <MovieInfo />;
+              <Route path={`${ROUTES.SEARCH}/:${ROUTES_PARAMS.QUERY}`}>
+                <Search />
+              </Route>
+              <Route path={`${ROUTES.MOVIE}/:${ROUTES_PARAMS.ID}`}>
+                <MovieInfo />
               </Route>
               <Route path={ROUTES.PAGE_404}>
                 <NotFound />

@@ -15,6 +15,6 @@ export const getMovies = async (offset: Offset, filter?: MovieFilter): Promise<O
   };
 };
 
-export const getMovie = async (id: number): Promise<Result<Movie>> => {
-  return callApiWithGet<Movie>(`${MOVIE_ENDPOINT.GET_MOVIES}/${id}`);
-};
+export const getMovie = async (id: number): Promise<Result<Movie>> => (
+  callApiWithGet<Movie>(`${MOVIE_ENDPOINT.GET_MOVIES}/${id}`)
+);

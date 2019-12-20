@@ -1,6 +1,6 @@
+import { AppState } from '@store/models';
 import { mapStateToProps, mapDispatchToProps } from '..';
 
-import { AppState } from '@store/models';
 
 describe('[ENHANCERS] [WITH_FILTER]', () => {
   test('should map state to props', () => {

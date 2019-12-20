@@ -2,7 +2,9 @@ import * as React from 'react';
 import { compose } from 'redux';
 
 import { SearchBy } from '@common/api';
-import { Button, Label, Input, SelectOptionButtons } from '@common/components';
+import {
+  Button, Label, Input, SelectOptionButtons,
+} from '@common/components';
 import { withMoviesDataHandlers } from '@enhancers/withMovies';
 import { withFilter } from '@enhancers/withFilter';
 
@@ -24,13 +26,13 @@ export const SearchComponent = ({ filter, setFilter, searchMovies }: SearchCompo
     });
     searchMovies({ limit: searchSize });
   }, [setFilter, filter, search, searchBy]);
-
+  const value = search || filter.search;
   return (
     <div className="search">
-      <Label className="search__title" text="Find your movie" uppercase={true} />
+      <Label className="search__title" text="Find your movie" uppercase />
       <div className="search__area">
         <div className="search-controls">
-          <Input className="search-controls__input" placeholder="Quentin Tarantio" onChange={setSearch} />
+          <Input className="search-controls__input" placeholder="Quentin Tarantio" value={value} onChange={setSearch} />
           <Button className="search-controls__button" title="Search" onClick={onClickCallback} />
         </div>
       </div>

@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 const DEV_SERVER_PORT = 3000;
 const DEV_SERVER_PUBLIC_PATH = '/';
 
@@ -8,6 +10,7 @@ module.exports = {
     port: DEV_SERVER_PORT,
     publicPath: DEV_SERVER_PUBLIC_PATH,
     historyApiFallback: true,
-    https: false,   
-  }
+    https: false,
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin()],
 };

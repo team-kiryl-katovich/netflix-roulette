@@ -9,11 +9,13 @@ const prodConfig = require('./config/webpack.config.prod');
 module.exports = () => {
   const { env } = yargs.argv;
   const isProduction = env === 'production';
-  baseConfig.plugins.push(new webpack.DefinePlugin({
-    'env.production': JSON.stringify(isProduction)
-  }));
-  return webpackMerge(
-    baseConfig,
-    isProduction ? prodConfig : devConfig
+  if (!isProduction) {
+    baseConfig.entry.main.unshift('react-hot-loader/patch', 'webpack-hot-middleware/client?reload=true');
+  }
+  baseConfig.plugins.push(
+    new webpack.DefinePlugin({
+      'env.production': JSON.stringify(isProduction),
+    }),
   );
+  return webpackMerge(baseConfig, isProduction ? prodConfig : devConfig);
 };

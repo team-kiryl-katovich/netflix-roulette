@@ -10,7 +10,7 @@ describe('[COMMON] [COMPONENTS] [BUTTON]', () => {
       onClick: jest.fn(),
       title: 'fakeTitle1',
     };
-    
+
     const component = enzyme.shallow(<Button {...fakeProps} />);
     expect(component).toMatchSnapshot();
   });

@@ -1,4 +1,6 @@
-import { MoviesFilterState, ACTION_TYPES, reducer, initialState } from '../';
+import {
+  MoviesFilterState, ACTION_TYPES, reducer, initialState,
+} from '..';
 
 describe('[SOTRE] [FILTER] [REDUCER]', () => {
   test('should return initial state for unknown action', () => {

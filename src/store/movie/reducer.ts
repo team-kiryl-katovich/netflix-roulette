@@ -25,5 +25,5 @@ export const reducer = handleActions<MovieDataState>(
       ...action.payload,
     }),
   },
-  initialState
+  initialState,
 );
