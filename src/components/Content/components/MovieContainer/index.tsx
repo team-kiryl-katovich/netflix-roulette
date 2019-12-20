@@ -12,13 +12,9 @@ import './styles';
 const pageSize = 9;
 
 export const MovieContainerComponent = ({
-  moviesData: { movies, loading, offset },
-  searchMovies,
+  moviesData: { movies, loading, offset },  
   moreMovies,
-}: MovieContainerComponentProps) => {
-  React.useEffect(() => {
-    searchMovies({ limit: pageSize });
-  }, []);
+}: MovieContainerComponentProps) => {  
   if (loading && !movies.length) {
     return <Loader loading={loading} />;
   }

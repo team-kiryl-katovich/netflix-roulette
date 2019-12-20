@@ -1,3 +1,5 @@
+import fetch from 'isomorphic-fetch';
+
 import { MOVIE_ENDPOINT } from './constants';
 import { Result } from './models';
 

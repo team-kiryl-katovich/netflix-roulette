@@ -1,26 +1,25 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
 module.exports = {
   entry: {
-    main: './src/index.tsx'
+    main: ['./src/index.tsx'],
   },
   output: {
     filename: 'main.js',
     chunkFilename: '[name].chunk.js',
-    publicPath: '/'
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.css', '.scss'],
-    alias:
-    {
+    alias: {
       '@assets': path.resolve(process.cwd(), './public/'),
       '@common': path.resolve(process.cwd(), './src/common/'),
       '@enhancers': path.resolve(process.cwd(), './src/enhancers/'),
       '@store': path.resolve(process.cwd(), './src/store/'),
-    }
+      'react-dom': '@hot-loader/react-dom',
+    },
   },
   module: {
     rules: [
@@ -29,9 +28,9 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'ts-loader'
-          }
-        ]
+            loader: 'ts-loader',
+          },
+        ],
       },
       /**
        * Rules to support SASS pre-processor.
@@ -52,8 +51,8 @@ module.exports = {
           },
           {
             loader: 'sass-loader',
-          }
-        ]
+          },
+        ],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
@@ -68,12 +67,12 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              outputPath: 'fonts'
-            }
-          }
-        ]
-      }
-    ]
+              outputPath: 'fonts',
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     /*
@@ -85,10 +84,10 @@ module.exports = {
      * @see https://github.com/ampedandwired/html-webpack-plugin
      */
     new HtmlWebpackPlugin({
-      filename: 'index.html',
+      filename: 'base-index.html',
       template: './public/index.html',
       chunks: ['main'],
-      hash: true
+      hash: true,
     }),
     /**
      * Plugin: OptimizeCssAssetsPlugin
@@ -97,17 +96,5 @@ module.exports = {
      * @see https://github.com/NMFR/optimize-css-assets-webpack-plugin
      */
     new OptimizeCssAssetsPlugin(),
-    /**
-     * All files inside webpack's output.path directory will be removed once, but the
-     * directory itself will not be. If using webpack 4+'s default configuration,
-     * everything under <PROJECT_DIR>/dist/ will be removed.
-     * Use cleanOnceBeforeBuildPatterns to override this behavior.
-     *
-     * During rebuilds, all webpack assets that are not used anymore
-     * will be removed automatically.
-     *
-     * @see https://github.com/johnagan/clean-webpack-plugin
-     */
-    new CleanWebpackPlugin()
-  ]
+  ],
 };

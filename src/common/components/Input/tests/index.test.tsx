@@ -7,6 +7,7 @@ import { Input } from '..';
 describe('[COMMON] [COMPONENTS] [INPUT]', () => {
   test('should render component', () => {
     const fakeProps: InputProps = {
+      value: '',
       onChange: jest.fn(),
     };
 

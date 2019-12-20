@@ -19,6 +19,7 @@ exports[`[COMPONENTS] [SEARCH_COMPONENT] should render component 1`] = `
         className="search-controls__input"
         onChange={[Function]}
         placeholder="Quentin Tarantio"
+        value="fakeSearch"
       />
       <Component
         className="search-controls__button"

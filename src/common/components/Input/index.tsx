@@ -5,7 +5,7 @@ import { InputProps } from './models';
 
 import './styles';
 
-export const Input = ({ placeholder, className, onChange }: InputProps) => {
+export const Input = ({ placeholder, className, onChange, value }: InputProps) => {
   const onChangeCallback = React.useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       onChange(e.currentTarget.value);
@@ -20,6 +20,7 @@ export const Input = ({ placeholder, className, onChange }: InputProps) => {
       type="text"
       placeholder={placeholder}
       onChange={onChangeCallback}
+      value={value}
     ></input>
   );
 };

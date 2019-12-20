@@ -57,10 +57,14 @@ exports[`[COMPONENTS] [APP] should render component 1`] = `
               <Connect(Connect(Component)) />
             </Route>
             <Route
+              path="/search/:query"
+            >
+              <Connect(Connect(Component)) />
+            </Route>
+            <Route
               path="/movie/:id"
             >
               <Connect(Component) />
-              ;
             </Route>
             <Route
               path="/404"

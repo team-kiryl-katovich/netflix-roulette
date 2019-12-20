@@ -1,9 +1,11 @@
 export const ROUTES = {
   HOME: '/',
   MOVIE: '/movie',
-  PAGE_404: '/404'
+  PAGE_404: '/404',
+  SEARCH: '/search'
 };
 
 export const ROUTES_PARAMS = {
-  ID: ':id',
+  ID: 'id',
+  QUERY: 'query'
 };

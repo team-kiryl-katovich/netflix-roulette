@@ -22,8 +22,11 @@ export const App = ({ store, history }: AppProps) => (
               <Route exact path={ROUTES.HOME}>
                 <Search />
               </Route>
-              <Route path={`${ROUTES.MOVIE}/${ROUTES_PARAMS.ID}`}>
-                <MovieInfo />;
+              <Route path={`${ROUTES.SEARCH}/:${ROUTES_PARAMS.QUERY}`}>
+                <Search />
+              </Route>
+              <Route path={`${ROUTES.MOVIE}/:${ROUTES_PARAMS.ID}`}>
+                <MovieInfo />
               </Route>
               <Route path={ROUTES.PAGE_404}>
                 <NotFound />
