@@ -16,8 +16,10 @@
       "@assets/*": ["public/*"],
       "@common/*": ["src/common/*"],
       "@enhancers/*": ["src/enhancers/*"],
-      "@store/*": ["src/store/*"]
+      "@store/*": ["src/store/*"],
+      "react-dom": ["@hot-loader/react-dom"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "server"],
+  "files": ["global.d.ts"]
 }

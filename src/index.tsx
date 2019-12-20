@@ -9,6 +9,10 @@ import AppStore from './store';
 
 library.add(faSearch);
 
-const store = new AppStore();
+const store = new AppStore(window['__PRELOADED_STATE__']);
+ReactDOM.hydrate(<App store={store.instance} history={store.history} />, document.getElementById('root'));
 
-ReactDOM.render(<App store={store.instance} history={store.history} />, document.getElementById('root'));
+const { hot } = module as any;
+if (!!hot) {
+  hot.accept();
+}

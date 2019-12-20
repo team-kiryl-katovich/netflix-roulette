@@ -5,5 +5,6 @@ exports[`[COMMON] [COMPONENTS] [INPUT] should render component 1`] = `
   className="netflix-input"
   onChange={[Function]}
   type="text"
+  value=""
 />
 `;
