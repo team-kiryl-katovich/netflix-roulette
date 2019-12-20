@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[COMPONENTS] [SEARCH_COMPONENT] should render component 1`] = `
+<div
+  className="search"
+>
+  <Component
+    className="search__title"
+    text="Find your movie"
+    uppercase={true}
+  />
+  <div
+    className="search__area"
+  >
+    <div
+      className="search-controls"
+    >
+      <Component
+        className="search-controls__input"
+        onChange={[Function]}
+        placeholder="Quentin Tarantio"
+      />
+      <Component
+        className="search-controls__button"
+        onClick={[Function]}
+        title="Search"
+      />
+    </div>
+  </div>
+  <div
+    className="search__filter"
+  >
+    <Component
+      onChange={[Function]}
+      options={
+        Array [
+          Object {
+            "clientId": "search-by-options-0-0",
+            "item": Object {
+              "title": "Title",
+              "value": "title",
+            },
+          },
+          Object {
+            "clientId": "search-by-options-0-1",
+            "item": Object {
+              "title": "Gengre",
+              "value": "genres",
+            },
+          },
+        ]
+      }
+      title="Search by"
+      value="title"
+    />
+  </div>
+</div>
+`;

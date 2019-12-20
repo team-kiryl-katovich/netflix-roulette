@@ -2,7 +2,7 @@ module.exports = {
   rootDir: './../',
   roots: ['<rootDir>/src'],
   testEnvironment: 'node',
-  setupFiles: ['<rootDir>/jest/setup/enzyme.ts'],
+  setupFiles: ['<rootDir>/jest/setup/enzyme.ts', '<rootDir>/jest/setup/global.ts'],
   testURL: 'https://localhost',
   coverageReporters: ['json', 'html', 'cobertura', 'text-summary'],
   coverageDirectory: './jest/output',
@@ -20,6 +20,7 @@ module.exports = {
     '@common/(.*)': '<rootDir>/src/common/$1',
     '@enhancers/(.*)': '<rootDir>/src/enhancers/$1',
     '@store/(.*)': '<rootDir>/src/store/$1',
+    '((.(css|scss)$)|(/styles$))': '<rootDir>/jest/__mocks__/styleMock.js',
   },
   testRegex: '(/tests/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   transform: {
@@ -34,4 +35,5 @@ module.exports = {
       },
     ],
   ],
+  snapshotSerializers: ['enzyme-to-json/serializer'],
 };

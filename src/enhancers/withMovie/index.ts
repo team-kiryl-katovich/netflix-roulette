@@ -8,11 +8,11 @@ import { WithMovieDataProps, WithMovieHandlersProps } from './models';
 
 export * from './models';
 
-const mapStateToProps = ({ movieData }: AppState): WithMovieDataProps => ({ movieData });
+export const mapStateToProps = ({ movieData }: AppState): WithMovieDataProps => ({ movieData });
 
 export const withMovieData = connect(mapStateToProps);
 
-const mapDispatchToProps = (dispatch: Dispatch): WithMovieHandlersProps =>
+export const mapDispatchToProps = (dispatch: Dispatch): WithMovieHandlersProps =>
   bindActionCreators(
     {
       selectMovie: thunkActions.selectMovie,

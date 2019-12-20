@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[COMMON] [COMPONENTS] [SCALE_IMAGE] should render component 1`] = `
+<div
+  className="scale-image"
+  style={
+    Object {
+      "paddingTop": "100%",
+      "width": "100%",
+    }
+  }
+>
+  <img
+    alt=""
+    className="scale-image__image"
+    src="fakeSrc"
+  />
+</div>
+`;

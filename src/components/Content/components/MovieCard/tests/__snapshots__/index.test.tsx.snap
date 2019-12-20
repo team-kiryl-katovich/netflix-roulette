@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[COMPONENTS] [CONTENT] [COMPONENTS] [MOVIE_CARD] should render component 1`] = `
+<div
+  className="movie-card"
+>
+  <Link
+    to="/movie/1"
+  >
+    <Component
+      ratio={140}
+      src="fakeImageUtr"
+    />
+    <div
+      className="movie-card__description"
+    >
+      <div
+        className="movie-card-title"
+      >
+        <Component
+          className="movie-card-title__title"
+          text="fakeTitle"
+        />
+        <Component
+          className="movie-card-title__gengre"
+          text="fakeGengre"
+        />
+      </div>
+      <div
+        className="movie-card-year"
+      >
+        <Component
+          className="movie-card-year__label"
+          text="2019"
+        />
+      </div>
+    </div>
+  </Link>
+</div>
+`;

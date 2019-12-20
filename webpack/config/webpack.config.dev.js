@@ -8,7 +8,6 @@ module.exports = {
     port: DEV_SERVER_PORT,
     publicPath: DEV_SERVER_PUBLIC_PATH,
     historyApiFallback: true,
-    https: true,
-    open: true
+    https: false,   
   }
 };
