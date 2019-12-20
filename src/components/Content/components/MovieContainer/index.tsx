@@ -33,6 +33,7 @@ const MovieContainerComponent = ({
       >
         {movies.map((movie) => (
           <MovieCard
+            id={movie.id}
             title={movie.title}
             gengre={movie.genres.join(',')}
             year={new Date(movie.release_date).getFullYear()}

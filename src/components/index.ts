@@ -4,3 +4,5 @@ export * from './Footer';
 export * from './Header';
 export * from './Search';
 export * from './InfoBar';
+export * from './MovieInfo';
+export * from './NotFound';

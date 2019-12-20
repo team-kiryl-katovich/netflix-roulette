@@ -1,4 +1,4 @@
-import { ThunkAction, ThunkDispatch } from 'redux-thunk';
+import { ThunkAction } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import { createAction } from 'redux-actions';
 
@@ -38,9 +38,9 @@ export const actions = {
 const searchMovies = (
   offset: Offset,
   filter?: MovieFilter
-): ThunkAction<Promise<void>, AppState, {}, AnyAction> => async (dispatch, getSate) => {
+): ThunkAction<Promise<void>, AppState, {}, AnyAction> => async (dispatch, getState) => {
   dispatch(fetchMovies({ loading: true, error: null, movies: [] }));
-  const { moviesFilter } = getSate();  
+  const { moviesFilter } = getState();  
   const { error, data, total, offset: cursor } = await getMovies(offset, filter || moviesFilter);  
   if (!!error) {    
     dispatch(fetchMoviesError({ loading: false, error }));

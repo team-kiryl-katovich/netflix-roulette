@@ -1,0 +1,12 @@
+@import '~@common/styles';
+
+.page-not-found {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__label {
+    font-family: font('regular');
+    font-size: $cell-size * 7;
+  }
+}
